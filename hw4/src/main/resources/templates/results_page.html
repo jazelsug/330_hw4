@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Results</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<h1>Your Result: LSDJKFLKSJDFLASKJDF</h6>
+<body>
+	<p><img src="/pics/wazowski.png" alt="Wazowski"></p>
+    <p th:text="'Your result: ' + ${result} + '.'" /> <!--currently outputs result as null.-->
+</body>
+</html>
