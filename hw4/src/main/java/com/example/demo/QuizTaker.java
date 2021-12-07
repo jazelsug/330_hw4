@@ -1,5 +1,6 @@
 package com.example.demo;
 
+//Model
 public class QuizTaker{
 	String name;
 	String result;
@@ -47,28 +48,38 @@ public class QuizTaker{
 		wazowski = wazowski + value;
 	}
 
-	public void calculateResult(){
+	public String calculateResult(){
 		double maxVal = 0.0;
 
 		if (maxVal <= cyrus){
 			maxVal = cyrus;
-			result = "cyrus";
+			result = "cyrus.jpg";
 		}
 		if (maxVal <= lnx1){
 			maxVal = lnx1;
-			result = "lnx1";
+			result = "lnx1.jpg";
 		}
 		if (maxVal <= shaking){
 			maxVal = shaking;
-			result = "shaking";
+			result = "shaking.gif";
 		}
 		if (maxVal <= thankyou){
 			maxVal = thankyou;
-			result = "thankyou";
+			result = "thankyou.gif";
 		}
 		if (maxVal <= wazowski){
 			maxVal = wazowski;
-			result = "wazowski";
+			result = "wazowski.png";
 		}
+
+		return result;
+	}
+
+	public void refresh(){
+		cyrus = 0.0;
+		lnx1 = 0.0;
+		shaking = 0.0;
+		thankyou = 0.0;
+		wazowski = 0.0;
 	}
 }
