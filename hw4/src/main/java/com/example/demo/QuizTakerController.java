@@ -56,6 +56,87 @@ public class QuizTakerController{
 		}
         return "q2";
     }
+
+	@RequestMapping(value = "/postq2", method = RequestMethod.GET)
+    public String postq2(@RequestParam(name = "roommate") String q2_result) {
+		//Assigns the correct values to potential results and redirects to q2.html
+
+		switch(q2_result){
+			case "lazy":
+				model.addToCyrus(0.45);
+				break;
+			case "noisy":
+				model.addToLnx1(1.75);
+				break;
+			case "venter":
+				model.addToShaking(1.3);
+				break;
+			case "perf":
+				model.addToThankYou(0.4);
+				break;
+			case "homebody":
+				model.addToWazowski(0.3);
+				break;
+			default:
+				//do nothing
+				break;
+		}
+        return "q3";
+    }
+
+	@RequestMapping(value = "/postq3", method = RequestMethod.GET)
+    public String postq3(@RequestParam(name = "movie") String q3_result) {
+		//Assigns the correct values to potential results and redirects to q2.html
+
+		switch(q3_result){
+			case "brainiac":
+				model.addToCyrus(0.3);
+				break;
+			case "theater":
+				model.addToLnx1(0.67);
+				break;
+			case "meanie":
+				model.addToShaking(0.8);
+				break;
+			case "jock":
+				model.addToThankYou(0.75);
+				break;
+			case "ditcher":
+				model.addToWazowski(0.3);
+				break;
+			default:
+				//do nothing
+				break;
+		}
+        return "q4";
+    }
+
+	@RequestMapping(value = "/postq4", method = RequestMethod.GET)
+    public String postq4(@RequestParam(name = "show") String q4_result) {
+		//Assigns the correct values to potential results and redirects to q2.html
+
+		switch(q4_result){
+			case "fifthgrade":
+				model.addToCyrus(1.9);
+				break;
+			case "voice":
+				model.addToLnx1(1.4);
+				break;
+			case "chopped":
+				model.addToShaking(0.85);
+				break;
+			case "housewives":
+				model.addToThankYou(1.1);
+				break;
+			case "house":
+				model.addToWazowski(1.2);
+				break;
+			default:
+				//do nothing
+				break;
+		}
+        return showResults();
+    }
 	/*
 	@GetMapping("/results")
 	public String showResults(){
