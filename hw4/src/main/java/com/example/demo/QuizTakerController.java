@@ -59,7 +59,7 @@ public class QuizTakerController{
 
 	@RequestMapping(value = "/postq2", method = RequestMethod.GET)
     public String postq2(@RequestParam(name = "roommate") String q2_result) {
-		//Assigns the correct values to potential results and redirects to q2.html
+		//Assigns the correct values to potential results and redirects to q3.html
 
 		switch(q2_result){
 			case "lazy":
@@ -86,7 +86,7 @@ public class QuizTakerController{
 
 	@RequestMapping(value = "/postq3", method = RequestMethod.GET)
     public String postq3(@RequestParam(name = "movie") String q3_result) {
-		//Assigns the correct values to potential results and redirects to q2.html
+		//Assigns the correct values to potential results and redirects to q4.html
 
 		switch(q3_result){
 			case "brainiac":
@@ -113,7 +113,7 @@ public class QuizTakerController{
 
 	@RequestMapping(value = "/postq4", method = RequestMethod.GET)
     public String postq4(@RequestParam(name = "show") String q4_result) {
-		//Assigns the correct values to potential results and redirects to q2.html
+		//Assigns the correct values to potential results and redirects to q5.html
 
 		switch(q4_result){
 			case "fifthgrade":
@@ -135,8 +135,91 @@ public class QuizTakerController{
 				//do nothing
 				break;
 		}
+		return "q5";
+    }
+
+	@RequestMapping(value = "/postq5", method = RequestMethod.GET)
+    public String postq5(@RequestParam(name = "vacation") String q5_result) {
+		//Assigns the correct values to potential results and redirects to q6.html
+
+		switch(q5_result){
+			case "friends":
+				model.addToCyrus(2.0);
+				break;
+			case "local":
+				model.addToLnx1(1.6);
+				break;
+			case "travel":
+				model.addToShaking(2.3);
+				break;
+			case "projects":
+				model.addToThankYou(0.9);
+				break;
+			case "inside":
+				model.addToWazowski(1.0);
+				break;
+			default:
+				//do nothing
+				break;
+		}
+        //return showResults();
+		return "q6";
+    }
+
+	@RequestMapping(value = "/postq6", method = RequestMethod.GET)
+    public String postq6(@RequestParam(name = "music") String q6_result) {
+		//Assigns the correct values to potential results and redirects to q7.html
+
+		switch(q6_result){
+			case "funsies":
+				model.addToCyrus(0.58);
+				break;
+			case "maker":
+				model.addToLnx1(2.5);
+				break;
+			case "never":
+				model.addToShaking(2.0);
+				break;
+			case "snob":
+				model.addToThankYou(0.9);
+				break;
+			case "focused":
+				model.addToWazowski(1.0);
+				break;
+			default:
+				//do nothing
+				break;
+		}
+        return "q7";
+    }
+
+	@RequestMapping(value = "/postq7", method = RequestMethod.GET)
+    public String postq7(@RequestParam(name = "yelp") String q7_result) {
+		//Assigns the correct values to potential results and ends quiz
+
+		switch(q7_result){
+			case "nice":
+				model.addToCyrus(1.3);
+				break;
+			case "snooty":
+				model.addToLnx1(0.8);
+				break;
+			case "evil":
+				model.addToShaking(1.12);
+				break;
+			case "opinionated":
+				model.addToThankYou(1.6);
+				break;
+			case "myeh":
+				model.addToWazowski(0.87);
+				break;
+			default:
+				//do nothing
+				break;
+		}
         return showResults();
     }
+
 	/*
 	@GetMapping("/results")
 	public String showResults(){
