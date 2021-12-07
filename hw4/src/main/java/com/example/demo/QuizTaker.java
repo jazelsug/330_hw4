@@ -28,6 +28,8 @@ public class QuizTaker{
 		return result;
 	}
 
+	//adders: Add a given value to one of the result counts
+
 	public void addToCyrus(double value){
 		cyrus = cyrus + value;
 	}
@@ -49,6 +51,7 @@ public class QuizTaker{
 	}
 
 	public String calculateResult(){
+		//Sets and returns result based on maximum value
 		double maxVal = 0.0;
 
 		if (maxVal <= cyrus){
@@ -76,6 +79,7 @@ public class QuizTaker{
 	}
 
 	public void refresh(){
+		//Flushes result counts
 		cyrus = 0.0;
 		lnx1 = 0.0;
 		shaking = 0.0;

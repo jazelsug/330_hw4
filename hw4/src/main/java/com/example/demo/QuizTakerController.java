@@ -220,15 +220,9 @@ public class QuizTakerController{
         return showResults();
     }
 
-	/*
 	@GetMapping("/results")
 	public String showResults(){
-		model.calculateResult();
-		return "results_page";
-	}
-	*/
-	@GetMapping("/results")
-	public String showResults(){
+		//Calculates results and redirects to appropriate result page.
 		String taker = model.getName();
 		String res = model.calculateResult();
 		System.out.println(taker + ": " + res);

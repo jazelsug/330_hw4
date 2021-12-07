@@ -3,9 +3,9 @@ package com.example.demo;
 import java.io.*;
 
 public class DataHandler{
-	//FileWriter results;
 	
 	public DataHandler(){
+		//Initializes csv file with column headers.
 		try{
 			FileWriter results = new FileWriter("results.csv");
 			results.append("Name,Result\n");
@@ -18,6 +18,7 @@ public class DataHandler{
 	}
 
 	public void addEntry(String taker, String res){
+		//Adds entry to csv file.
 		try{
 			FileWriter results = new FileWriter("results.csv",true);
 			results.append(taker + "," + res + "\n");
